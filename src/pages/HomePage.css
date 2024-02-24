@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* base styles */
+* {
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+    color: #333;
+}
+
+
+
+
+
+#project-list {
+    display: grid; 
+    grid-template-columns: 30% 30% 30%; 
+    column-gap: 10px;
+    row-gap: 10px;
+    }
