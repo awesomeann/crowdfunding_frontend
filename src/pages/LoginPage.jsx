@@ -1,4 +1,4 @@
 function LoginPage() {
-    return <h1>This is the login page</h1>;
+    return <LoginForm />;
     }
     export default LoginPage;
