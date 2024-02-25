@@ -1,6 +1,6 @@
 import CreateProjectForm from "../components/CreateProjectForm";
 
-function LoginPage() {
+function CreateProjectPage() {
     return <CreateProjectForm />;
     }
     export default CreateProjectPage;

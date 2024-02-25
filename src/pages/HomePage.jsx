@@ -1,9 +1,8 @@
-// import { allProjects } from "../data";
-
+import { Link, Outlet } from "react-router-dom";
 import useProjects from '../hooks/use-projects';
 import ProjectCard from '../components/ProjectCard';
 import "./HomePage.css";
-import useAuth from "../hooks/use-auth.js";
+import { useAuth } from "../hooks/use-auth.js";
 
 function HomePage() {
     const {projects , isLoading, error} = useProjects(); //use only projects from the hook [projects, isLoading, error]

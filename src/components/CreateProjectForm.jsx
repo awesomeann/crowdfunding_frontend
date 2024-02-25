@@ -23,7 +23,7 @@ function CreateProjectForm() {
         event.preventDefault();
         if (projectData.title && projectData.description && projectData.animal
             && projectData.city && projectData.country && projectData.goal && projectData.image) {
-        postUser(
+        postProject(
             projectData.title ,
              projectData.description ,
              projectData.animal,
