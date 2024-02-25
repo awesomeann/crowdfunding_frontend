@@ -14,16 +14,17 @@ function NavBar() {
 <div> <nav>
         <Link to="/">Home</Link>
             {auth.token ? (
-            <Link to="/" onClick={handleLogout}>
-            Log Out
-            </Link>
+              <div>
+                <Link to="/user">Account</Link>
+                <Link to="/" onClick={handleLogout}> Log Out</Link>
+            </div>
             ) : (
             <div>
               <Link to="/login">Login</Link>
               <Link to="/signup">Sign Up</Link>
             </div>
             )}
-            <Link to="/user">Account</Link>
+            
        
       </nav>
       <Outlet />
