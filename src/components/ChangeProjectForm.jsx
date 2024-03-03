@@ -47,8 +47,17 @@ function ChangeProjectForm(props) {
         }
         };
 
+        const handleDelete = (event) => {
+            event.preventDefault();
+            deleteProject(project.id).then((response) => {
+                console.log(response);
+            })
+        };
+
+
     return (
         <form>
+             <img src={project.image} alt={`${project.title} image`} />
             <div>
                 <label htmlFor="title">Title:</label>
                 <input
@@ -72,7 +81,7 @@ function ChangeProjectForm(props) {
             <div>
             <label htmlFor="animal">What animal are you trying to help? </label>
 
-                <select name="animal" id="animal" value={project.animal} onChange={handleChange} >
+                <select name="animal" id="animal" defaultValue={project.animal} onChange={handleChange} >
                 <option value="CAT">Cat</option>
                 <option value="DOG">Dog</option>
                 <option value="HORSE">Horse</option>
@@ -126,6 +135,9 @@ function ChangeProjectForm(props) {
             </div>
             <button type="submit" onClick={handleSubmit}>
                 Save Changes
+            </button>
+            <button type="submit" onClick={handleDelete}>
+                Delete Project
             </button>
         </form>
     );
