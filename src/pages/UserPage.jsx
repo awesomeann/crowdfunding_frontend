@@ -5,9 +5,10 @@ import ProjectCard from "../components/ProjectCard";
 function UserPage() {
  // Here we use a hook that comes for free in react router called `useParams`to get the id from the URL so that we can pass it to our useProject hook.
     // const { id } = useParams();
-    const id = window.localStorage.getItem("id");
+    // const id = window.localStorage.getItem("id");
  // useProject returns three pieces of info, so we need to grab them all here
-     const { user, isLoading, error } = useUser(id);
+    const { id } = useParams();
+ const { user, isLoading, error } = useUser(id);
      if (isLoading) {
         return (<p>loading...</p>)
         }
@@ -20,6 +21,8 @@ function UserPage() {
         <h4>{`First Name: ${user.first_name}`}</h4>
         <h4>{`Last Name: ${user.last_name}`}</h4>
         <h4>{`Email: ${user.email}`}</h4>
+        <h4>{`Email: ${user.id}`}</h4>
+
         <h4>{`Active Account: ${user.is_active}`}</h4>
         <div id="owned-projects">
         <h3>Projects: </h3>

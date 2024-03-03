@@ -11,13 +11,14 @@ function NavBar() {
    setAuth({ token: null });
    };
   console.log(auth)
+    const id = window.localStorage.getItem("id");
 
   return (
 <div> <nav>
         <Link to="/">Home</Link>
             {auth.token ? (
               <div>
-                <Link to={`/user/`}>Account</Link>
+                <Link to={`/user/${id}`}>Account</Link>
                 <Link to="/" onClick={handleLogout}> Log Out</Link>
             </div>
             ) : (

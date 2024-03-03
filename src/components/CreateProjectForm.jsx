@@ -1,7 +1,9 @@
 import { useState } from "react";
 import postProject from "../api/post-project.js";
+import { useNavigate } from "react-router-dom";
 
 function CreateProjectForm() {
+    const navigate = useNavigate();
     const [projectData, setProjectData] = useState({
             title:	"",
             description: "",
@@ -33,6 +35,7 @@ function CreateProjectForm() {
              projectData.image
         ).then((response) => {
         console.log(response);
+        navigate(`/project/${response.id}`);
         });
         }
         };

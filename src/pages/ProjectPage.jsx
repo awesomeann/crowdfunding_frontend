@@ -7,7 +7,7 @@ import './ProjectPage.css';
 import PledgeForm from "../components/PledgeForm";
 import ProjectPledges from "../components/ProjectPledges";
 import { useAuth } from "../hooks/use-auth.js";
-
+import useUser from "../hooks/use-user.js";
 
 function ProjectPage() {
 
@@ -17,7 +17,7 @@ function ProjectPage() {
     const {auth, setAuth} = useAuth();
 
     const {project, isLoading, error} = useProject(id);
-
+    console.log(project); 
     // const [sum, setSum] = useState(0);
 
     // const sumOfPledges = (project) => 
@@ -31,8 +31,9 @@ function ProjectPage() {
                };
     if (error) {
         return (<p>{error.message}</p>);   };
-
-   
+ 
+ 
+    
 
     return (
     <div>
@@ -40,22 +41,18 @@ function ProjectPage() {
              <img id="project-img" src={project.image} alt={`${project.title} image`} />
             <div id="project-description">
                 <h2>{project.title}</h2>
+                <Link to={`/user/${project.owner}`}>Project Owner</Link>
                 <h3> {`Animal: ${project.animal}`}</h3>
                 <h3> {`Location: ${project.city}, ${project.country}`}</h3>
                 {/* <h3> {`Goal: ${project.goal} AUD ${sum} `}</h3> */}
 
                 <h3> {`Created at: ${project.date_created}`}</h3>
                 <h3> {`Status: ${project.is_open}`}</h3>
-                <h3> {`Owner: ${project.owner}`}</h3>
-                <h3> {`User Id: ${userId}`}</h3>
-
-
-
-                
+                <h3> {`Owner: ${project.owner}`}</h3>              
             </div>
         </div>
 
-        {userId==project.owner ? (
+        {/* {userId==project.owner ? (
               <div>
                 <Link to={`/project/${project.id}/settings/`}>Change Project</Link>
             </div>
@@ -63,22 +60,24 @@ function ProjectPage() {
             <div>
               <h3>Login to Create a Project</h3>
             </div>
-            )}    
-
-
-
-         <ProjectPledges projectId={id}/>
+            )}     */}
 
          {auth.token ? (
+           userId==project.owner ? (
+            <div>
+                <Link to={`/project/${project.id}/settings/`}>Change Project</Link>
+            </div>
+        ) : (
+
               <div>
             <PledgeForm id={id}/>
              </div>
-            ) : (
+            )): (
             <div>
               <h3>Login to Create a Pledge</h3>
             </div>
             )}    
-
+      <ProjectPledges projectId={id}/>
         
     </div>
     )

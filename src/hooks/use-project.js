@@ -16,5 +16,7 @@ export default function useProject(projectId) {
         });
 
     }, [projectId]);
+
+    
     return {project, isLoading, error};
 }

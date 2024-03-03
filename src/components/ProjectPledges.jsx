@@ -38,7 +38,7 @@ function ProjectPledges(props){
            </ul>
             ) : (
             <div>
-              <h3>Be the first to pledge! </h3>
+              <h3> There are no pledges yet. </h3>
             </div>
             )}    
 

@@ -2,10 +2,11 @@ import { useState } from "react";
 import putProject from "../api/put-project.js";
 import deleteProject from "../api/delete-project.js";
 import useProject from "../hooks/use-project.js";
+import { useNavigate } from "react-router-dom";
 
 function ChangeProjectForm(props) {
     const projectId = props.id;
-
+    const navigate = useNavigate();
     const {project, isLoading, error} = useProject(projectId);
 
     const [projectData, setProjectData] = useState([project]
@@ -44,14 +45,17 @@ function ChangeProjectForm(props) {
         ).then((response) => {
         console.log(response);
         });
+        navigate(`/project/${project.id}`);
         }
+        
         };
 
         const handleDelete = (event) => {
             event.preventDefault();
             deleteProject(project.id).then((response) => {
                 console.log(response);
-            })
+            });
+            navigate('/');
         };
 
 
@@ -64,7 +68,7 @@ function ChangeProjectForm(props) {
                      type="text"
                      id="title"
                      placeholder="Enter project title"
-                     value = {project.title}
+                     defaultValue = {project.title}
                      onChange={handleChange}
                 />
             </div>
@@ -74,7 +78,7 @@ function ChangeProjectForm(props) {
                      type="text"
                      id="description"
                      placeholder="Enter project description"
-                     value = {project.description}
+                     defaultValue = {project.description}
                      onChange={handleChange}
                 />
             </div>
@@ -95,7 +99,7 @@ function ChangeProjectForm(props) {
                      type="text"
                      id="city"
                      placeholder="Enter the city where the animal is located"
-                     value = {project.city}
+                     defaultValue = {project.city}
 
                      onChange={handleChange}
                 />
@@ -106,7 +110,7 @@ function ChangeProjectForm(props) {
                      type="text"
                      id="country"
                      placeholder="Enter the country where the animal is located"
-                     value = {project.country}
+                     defaultValue = {project.country}
 
                      onChange={handleChange}
                 />
@@ -117,7 +121,7 @@ function ChangeProjectForm(props) {
                      type="text"
                      id="goal"
                      placeholder="Enter project goal in AUD"
-                     value = {project.goal}
+                     defaultValue = {project.goal}
 
                      onChange={handleChange}
                 />
@@ -128,7 +132,7 @@ function ChangeProjectForm(props) {
                      type="text"
                      id="image"
                      placeholder="Enter URL of the animal photo"
-                     value = {project.image}
+                     defaultValue = {project.image}
 
                      onChange={handleChange}
                 />
