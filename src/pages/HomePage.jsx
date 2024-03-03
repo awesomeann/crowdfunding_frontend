@@ -16,7 +16,7 @@ function HomePage() {
         <h1>This is the home page.</h1>
         {auth.token ? (
               <div>
-                <Link to="/projects/create">Create Project</Link>
+                <Link to="/project/create">Create Project</Link>
             </div>
             ) : (
             <div>

@@ -29,7 +29,9 @@ function LoginForm() {
                 credentials.username, 
                 credentials.username,
                 ).then((response) => {
+                    console.log(response);
                     window.localStorage.setItem("token", response.token);
+                    window.localStorage.setItem("id", parseInt(response.user_id));
                     setAuth({
                         token: response.token,
                         });
@@ -39,7 +41,7 @@ function LoginForm() {
         };
 
     return (
-    <form> <div>
+    <form onSubmit={handleSubmit}> <div>
             <label htmlFor="username">Username:</label>
             
             <input
@@ -61,7 +63,7 @@ function LoginForm() {
 
 
     </div>
-          <button type="submit" onClick={handleSubmit}>Login</button>
+          <button type="submit">Login</button>
         </form>
     );
 

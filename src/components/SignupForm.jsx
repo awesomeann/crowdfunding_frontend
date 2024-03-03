@@ -18,12 +18,13 @@ function SignupForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (credentials.username && credentials.password && credentials.email) {
-        postUser(
-        credentials.username,
-        credentials.password,
-        credentials.email
-        ).then((response) => {
-        console.log(response);
+            postUser(
+                credentials.username,
+                credentials.password,
+                credentials.email
+                ).then((response) => {
+           
+            console.log(response);
         });
         }
         };

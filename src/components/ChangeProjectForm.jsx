@@ -1,16 +1,22 @@
 import { useState } from "react";
-import postProject from "../api/post-project.js";
+import putProject from "../api/put-project.js";
+import deleteProject from "../api/delete-project.js";
+import useProject from "../hooks/use-project.js";
 
-function CreateProjectForm() {
-    const [projectData, setProjectData] = useState({
-            title:	"",
-            description: "",
-            animal:	"",
-            city: "",
-            country: "",
-            goal: "",
-            image: "",
-        });
+function ChangeProjectForm(props) {
+    const projectId = props.id;
+
+    const {project, isLoading, error} = useProject(projectId);
+
+    const [projectData, setProjectData] = useState([project]
+        );
+
+        if (isLoading) {
+            return (<p>loading...</p>);
+                   };
+        if (error) {
+            return (<p>{error.message}</p>);   };
+
     const handleChange = (event) => {
     const { id, value } = event.target;
         setProjectData((prevProjectData) => ({
@@ -21,16 +27,20 @@ function CreateProjectForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (projectData.title && projectData.description && projectData.animal
-            && projectData.city && projectData.country && projectData.goal && projectData.image) {
-        postProject(
+        if (projectData.title || projectData.description || projectData.animal
+            || projectData.city || projectData.country || projectData.goal || projectData.image || projectData.is_open ||
+            projectData.deadline) {
+        putProject(
             projectData.title ,
              projectData.description ,
              projectData.animal,
              projectData.city ,
              projectData.country ,
              projectData.goal ,
-             projectData.image
+             projectData.image,
+             projectData.is_open,
+             projectData.deadline,
+             projectId
         ).then((response) => {
         console.log(response);
         });
@@ -45,6 +55,7 @@ function CreateProjectForm() {
                      type="text"
                      id="title"
                      placeholder="Enter project title"
+                     value = {project.title}
                      onChange={handleChange}
                 />
             </div>
@@ -54,14 +65,14 @@ function CreateProjectForm() {
                      type="text"
                      id="description"
                      placeholder="Enter project description"
+                     value = {project.description}
                      onChange={handleChange}
                 />
             </div>
             <div>
             <label htmlFor="animal">What animal are you trying to help? </label>
 
-                <select name="animal" id="animal" onChange={handleChange} >
-                <option value="">Choose an animal</option>
+                <select name="animal" id="animal" value={project.animal} onChange={handleChange} >
                 <option value="CAT">Cat</option>
                 <option value="DOG">Dog</option>
                 <option value="HORSE">Horse</option>
@@ -75,6 +86,8 @@ function CreateProjectForm() {
                      type="text"
                      id="city"
                      placeholder="Enter the city where the animal is located"
+                     value = {project.city}
+
                      onChange={handleChange}
                 />
             </div>
@@ -84,6 +97,8 @@ function CreateProjectForm() {
                      type="text"
                      id="country"
                      placeholder="Enter the country where the animal is located"
+                     value = {project.country}
+
                      onChange={handleChange}
                 />
             </div>
@@ -93,6 +108,8 @@ function CreateProjectForm() {
                      type="text"
                      id="goal"
                      placeholder="Enter project goal in AUD"
+                     value = {project.goal}
+
                      onChange={handleChange}
                 />
             </div>
@@ -102,14 +119,16 @@ function CreateProjectForm() {
                      type="text"
                      id="image"
                      placeholder="Enter URL of the animal photo"
+                     value = {project.image}
+
                      onChange={handleChange}
                 />
             </div>
             <button type="submit" onClick={handleSubmit}>
-                Create
+                Save Changes
             </button>
         </form>
     );
 
 }
-export default CreateProjectForm;
+export default ChangeProjectForm;

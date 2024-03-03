@@ -6,6 +6,8 @@ function NavBar() {
    const {auth, setAuth} = useAuth();
    const handleLogout = () => {
    window.localStorage.removeItem("token");
+   window.localStorage.removeItem("id");
+
    setAuth({ token: null });
    };
   console.log(auth)
@@ -15,7 +17,7 @@ function NavBar() {
         <Link to="/">Home</Link>
             {auth.token ? (
               <div>
-                <Link to="/user">Account</Link>
+                <Link to={`/user/`}>Account</Link>
                 <Link to="/" onClick={handleLogout}> Log Out</Link>
             </div>
             ) : (
