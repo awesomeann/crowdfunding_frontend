@@ -1,6 +1,7 @@
 import { useState } from "react";
 import postProject from "../api/post-project.js";
 import { useNavigate } from "react-router-dom";
+import './Form.css';
 
 function CreateProjectForm() {
     const navigate = useNavigate();
@@ -41,7 +42,8 @@ function CreateProjectForm() {
         };
 
     return (
-        <form>
+        <form id="create-project-form">
+              <h2>Create Project</h2>
             <div>
                 <label htmlFor="title">Title:</label>
                 <input

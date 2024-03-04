@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postLogin from "../api/post-login.js";
 import { useAuth } from "../hooks/use-auth.js";
+import './Form.css'
 
 
 function LoginForm() { 
@@ -41,7 +42,12 @@ function LoginForm() {
         };
 
     return (
-    <form onSubmit={handleSubmit}> <div>
+    <form id="login-form" onSubmit={handleSubmit}> 
+      <h2>Login</h2>
+    <div>
+          
+        
+
             <label htmlFor="username">Username:</label>
             
             <input
@@ -63,7 +69,7 @@ function LoginForm() {
 
 
     </div>
-          <button type="submit">Login</button>
+          <button type="submit"> Submit </button>
         </form>
     );
 

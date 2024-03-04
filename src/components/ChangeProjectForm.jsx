@@ -3,6 +3,8 @@ import putProject from "../api/put-project.js";
 import deleteProject from "../api/delete-project.js";
 import useProject from "../hooks/use-project.js";
 import { useNavigate } from "react-router-dom";
+import './Form.css';
+
 
 function ChangeProjectForm(props) {
     const projectId = props.id;
@@ -60,7 +62,8 @@ function ChangeProjectForm(props) {
 
 
     return (
-        <form>
+        <form id="change-project-form">
+              <h2>Change Project</h2>
              <img src={project.image} alt={`${project.title} image`} />
             <div>
                 <label htmlFor="title">Title:</label>
@@ -136,6 +139,14 @@ function ChangeProjectForm(props) {
 
                      onChange={handleChange}
                 />
+            </div>
+            <div>
+                <label htmlFor="is_open"> Status of the project </label>
+
+                <select name="is_open" id="is_open" defaultValue={project.is_open} onChange={handleChange} >
+                <option value="true">Open</option>
+                <option value="false">Closed</option>
+                </select>
             </div>
             <button type="submit" onClick={handleSubmit}>
                 Save Changes

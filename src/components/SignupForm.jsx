@@ -1,8 +1,11 @@
 import { useState } from "react";
 import postUser from "../api/post-user.js";
+import './Form.css';
 
 function SignupForm() {
     const [credentials, setCredentials] = useState({
+        first_name: "",
+        last_name: "",
         username: "",
         password: "",
         email:""
@@ -19,6 +22,8 @@ function SignupForm() {
         event.preventDefault();
         if (credentials.username && credentials.password && credentials.email) {
             postUser(
+                credentials.first_name,
+                credentials.last_name,
                 credentials.username,
                 credentials.password,
                 credentials.email
@@ -30,7 +35,26 @@ function SignupForm() {
         };
 
     return (
-        <form>
+        <form id="signup-form" >
+              <h2>Sign Up</h2>
+            <div>
+                <label htmlFor="first-name">First Name:</label>
+                <input
+                     type="text"
+                     id="first-name"
+                     placeholder="Enter first name"
+                     onChange={handleChange}
+                />
+            </div>
+            <div>
+                <label htmlFor="last-name">Last Name:</label>
+                <input
+                     type="text"
+                     id="last-name"
+                     placeholder="Enter last name"
+                     onChange={handleChange}
+                />
+            </div>
             <div>
                 <label htmlFor="username">Username:</label>
                 <input

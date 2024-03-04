@@ -1,7 +1,10 @@
 import { useState } from "react";
 import postPledge from "../api/post-pledge.js";
+import { useNavigate } from "react-router-dom";
+import ProjectPage from "../pages/ProjectPage.jsx";
 
 function PledgeForm(props) {
+    const navigate = useNavigate();
     const projectId = props.id;
     const [credentials, setCredentials] = useState({
         amount: "",
@@ -26,6 +29,7 @@ function PledgeForm(props) {
                 ).then((response) => {
            
             console.log(response);
+            window. location. reload();
         });
         }
         };

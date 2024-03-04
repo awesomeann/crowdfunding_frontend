@@ -1,4 +1,4 @@
-async function postUser(username, password, email) {
+async function postUser(first_name, last_name, username, password, email) {
     console.log({
         username
     });
@@ -10,6 +10,8 @@ async function postUser(username, password, email) {
     "Content-Type": "application/json",
     },
     body: JSON.stringify({
+    "first_name": first_name,
+    "last_name": last_name,
     "username": username,
     "password": password,
     "email": email,
