@@ -3,6 +3,7 @@ import useProjects from '../hooks/use-projects';
 import ProjectCard from '../components/ProjectCard';
 import "./HomePage.css";
 import { useAuth } from "../hooks/use-auth.js";
+import img from "/src/assets/images/home-hero.svg";
 
 function HomePage() {
     const {projects , isLoading, error} = useProjects(); //use only projects from the hook [projects, isLoading, error]
@@ -15,7 +16,8 @@ function HomePage() {
   <div>      
 
       <div id='home-hero'>
-         <img src="src/assets/images/home-hero.svg" id="home-hero-img" />  
+        
+         <img src={img} id="home-hero-img" />  
          <div id="picture-overlay">
 <div id="hero-text">
         
