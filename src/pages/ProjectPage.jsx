@@ -84,7 +84,7 @@ function ProjectPage() {
              </div>
             ): (
             <div>
-              <h3>Login to Create a Pledge</h3>
+              <p id="login-to-create">Login to Create a Pledge</p>
             </div>
             )}  
             
