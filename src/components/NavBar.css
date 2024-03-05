@@ -21,6 +21,7 @@ nav{
     text-decoration: none;
     padding: 6px;
     margin-right: 50px;
+    color: black;
   }
   nav a:hover {
     color: rgb(45, 204, 80);

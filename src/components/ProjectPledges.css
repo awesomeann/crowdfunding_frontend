@@ -1,0 +1,69 @@
+
+
+/* Styling for the entire pledge section */
+#pledges-section {
+    margin-top: 20px;
+  }
+  
+  /* Styling for the list of pledges */
+  h3 {
+    color: #333;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #pledge-comment {
+    margin-top: 8px;
+    color: #555;
+  }
+  
+  /* Styling for the pledge form */
+  #pledge-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width:80%;
+  }
+  
+  #pledge-commen label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  #pledge-commen input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #pledge-commen button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

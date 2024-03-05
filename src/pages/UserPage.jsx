@@ -1,6 +1,7 @@
  import { useParams } from "react-router-dom";
  import useUser from "../hooks/use-user";
 import ProjectCard from "../components/ProjectCard";
+import './UserPage.css'
 
 function UserPage() {
  // Here we use a hook that comes for free in react router called `useParams`to get the id from the URL so that we can pass it to our useProject hook.
@@ -16,7 +17,8 @@ function UserPage() {
         return (<p>{error.message}</p>)
         }
     return (
-    <div>
+    <div id="user-info">
+        <h2> User Info</h2>
         <h4>{`Username: ${user.username}`}</h4>
         <h4>{`First Name: ${user.first_name}`}</h4>
         <h4>{`Last Name: ${user.last_name}`}</h4>

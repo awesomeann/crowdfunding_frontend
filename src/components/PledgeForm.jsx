@@ -2,6 +2,7 @@ import { useState } from "react";
 import postPledge from "../api/post-pledge.js";
 import { useNavigate } from "react-router-dom";
 import ProjectPage from "../pages/ProjectPage.jsx";
+import "./ProjectPledges.css";
 
 function PledgeForm(props) {
     const navigate = useNavigate();
@@ -35,7 +36,7 @@ function PledgeForm(props) {
         };
 
     return (
-        <form >
+        <form id="pledge-form" >
             <div>
                 <label htmlFor="amount">Amount in AUD: </label>
                 <input
@@ -46,7 +47,7 @@ function PledgeForm(props) {
                 />
             </div>
             <div>
-                <label htmlFor="comment">Comment:</label>
+                <label htmlFor="comment">Comment: </label>
                 <input
                      type="text"
                      id="comment"

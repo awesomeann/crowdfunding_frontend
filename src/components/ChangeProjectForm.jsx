@@ -64,7 +64,7 @@ function ChangeProjectForm(props) {
     return (
         <form id="change-project-form">
               <h2>Change Project</h2>
-             <img src={project.image} alt={`${project.title} image`} />
+            
             <div>
                 <label htmlFor="title">Title:</label>
                 <input
@@ -151,7 +151,7 @@ function ChangeProjectForm(props) {
             <button type="submit" onClick={handleSubmit}>
                 Save Changes
             </button>
-            <button type="submit" onClick={handleDelete}>
+            <button id="delete-project-button" type="submit" onClick={handleDelete}>
                 Delete Project
             </button>
         </form>

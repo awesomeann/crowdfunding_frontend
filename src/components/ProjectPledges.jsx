@@ -27,7 +27,7 @@ function ProjectPledges(props){
               {pledges.map((pledgeData, key)=> {
               return (
                       <li key={key}>
-                          {pledgeData.supporter} donated {pledgeData.amount}
+                          {pledgeData.amount} AUD
                           <div id='pledge-comment'>
                           Comment: {pledgeData.comment}
                           </div>

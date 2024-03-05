@@ -1,11 +1,99 @@
-#project-info {
-    height: 300px;
+
+
+/* Container for the entire project section */
+#project-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin: 20px;
 
-
+  }
+  
+  /* Styling for the project information */
+  #project-info {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display:flex;
+    width: 90%;
+    justify-content: space-around;
+    
+    margin: auto;
+    margin-top: 80px;
 }
+  
+  #project-img {
+    max-width: 40%;
+    border-radius: 8px;
+  }
+  
+  #project-description {
+    margin-top: 20px;
+    width: 40%;
+    
+  }
+  
+  h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  /* a:hover {
+    text-decoration: underline;
+  } */
+  
+  h4 {
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
+  #change-project-button {
+    margin-top: 15px;
+  }
+  
+  /* Styling for the pledge section */
+  #pledges {
+    flex: 1;
+    margin-left: 20px;
+    margin-top: 40px;
+    
+  }
+  
+  /* Responsive layout adjustments */
+  @media screen and (max-width: 768px) {
+    #project-container {
+      flex-direction: column;
+    }
+  
+    #pledges {
+      margin-left: 0;
+      margin-top: 40px;
+        
+    }
+  }
+  
+  #project-desc-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-#project-img {
-    height: 100%;
-}
+ #settings-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4c9daf;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }

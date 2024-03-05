@@ -33,9 +33,7 @@ function NavBar() {
      
       <Outlet />
 
-      <footer>
-        <Link to="/">Contact Us</Link>
-      </footer>
+    
     </div>
 ); }
 
