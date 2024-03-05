@@ -46,8 +46,9 @@ function ChangeProjectForm(props) {
              projectId
         ).then((response) => {
         console.log(response);
-        });
         navigate(`/project/${project.id}`);
+        });
+        
         }
         
         };

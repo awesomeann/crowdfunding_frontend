@@ -1,8 +1,10 @@
 import { useState } from "react";
 import postUser from "../api/post-user.js";
 import './Form.css';
+import { useNavigate } from "react-router-dom";
 
 function SignupForm() {
+    const navigate = useNavigate();
     const [credentials, setCredentials] = useState({
         first_name: "",
         last_name: "",
@@ -20,7 +22,8 @@ function SignupForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (credentials.username && credentials.password && credentials.email) {
+        if ( credentials.first_name &&
+            credentials.last_name && credentials.username && credentials.password && credentials.email) {
             postUser(
                 credentials.first_name,
                 credentials.last_name,
@@ -30,30 +33,32 @@ function SignupForm() {
                 ).then((response) => {
            
             console.log(response);
+            navigate("/login");
         });
+    
         }
         };
 
-    return (
+   return (
         <form id="signup-form" >
               <h2>Sign Up</h2>
             <div>
-                <label htmlFor="first-name">First Name:</label>
+                <label htmlFor="first_name">First Name:</label>
                 <input
                      type="text"
-                     id="first-name"
+                     id="first_name"
                      placeholder="Enter first name"
                      onChange={handleChange}
                 />
             </div>
             <div>
-                <label htmlFor="last-name">Last Name:</label>
+                <label htmlFor="last_name">Last Name:</label>
                 <input
                      type="text"
-                     id="last-name"
+                     id="last_name"
                      placeholder="Enter last name"
                      onChange={handleChange}
-                />
+                /> 
             </div>
             <div>
                 <label htmlFor="username">Username:</label>
