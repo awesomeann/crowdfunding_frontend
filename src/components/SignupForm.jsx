@@ -22,8 +22,7 @@ function SignupForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if ( credentials.first_name &&
-            credentials.last_name && credentials.username && credentials.password && credentials.email) {
+        if (  credentials.username && credentials.password && credentials.email) {
             postUser(
                 credentials.first_name,
                 credentials.last_name,
