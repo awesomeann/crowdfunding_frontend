@@ -36,7 +36,10 @@ min-height: 300px;
     grid-template-columns: 22% 22% 22% 22%; 
     column-gap: 10px;
     row-gap: 20px;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly;
+    display: flex; */
+    
+
     }
 
     #project-list h3 {

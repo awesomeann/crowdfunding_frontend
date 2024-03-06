@@ -79,10 +79,13 @@ function ProjectPage() {
         <div id="pledges">
               <h3> Support this campaign</h3>  
           {auth.token ? (
+             userId==project.owner ? (    
+                <div >
+                 <p>This is your project</p>
+                </div>):(
               <div >
             <PledgeForm id={id}/>
-             </div>
-            ): (
+             </div>)): (
             <div>
               <p id="login-to-create">Login to Create a Pledge</p>
             </div>

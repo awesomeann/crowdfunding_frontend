@@ -15,6 +15,7 @@
     height: 300px; 
     object-fit: cover;
     border-radius: 10px;
+    object-fit: cover;
     }
 
  #project-card{
