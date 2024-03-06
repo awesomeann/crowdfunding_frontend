@@ -12,25 +12,24 @@ For people who want to raise money to support animals. They can create a campaig
 
   
 ### screenshot of the homepage
-![]( crowdfunding/images/API_Spec.png)
-![]( crowdfunding/images/API_Spec.png)
+![]( src/assets/screenshots/HomePageScreenshot1.png)
+![]( src/assets/screenshots/HomePageScreenshot2.png)
 | | | | | | |
 ### screenshot of the project creation page
-![]( crowdfunding/images/Database_schema.png )
+![]( src/assets/screenshots/CreateProjectScreenshot.png)
 
-### Ascreenshot of the project creation form
-![]( crowdfunding/images/API_Tokens/token_admin.png )
+
 
 
 ### Gscreenshot of a project with pledges
-![]( crowdfunding/images/Pledge_Get_Authorized.png )
+![]( src/assets/screenshots/ProjectPageScreenshot.png )
+![]( src/assets/screenshots/ProjectPageScreenshot2.png )
 
 
 ### screenshot of the resulting page when an unauthorized user attempts to edita project (optional, depending on whether or not this functionality makes sense inyour app!)
-![]( crowdfunding/images/Project_Post_Authorized.png )
-![]( crowdfunding/images/Pledge_Post_Unauthorized.png )
+![]( src/assets/screenshots/ChangeProjectFunctionalityScreenshot.png)
 
-
+![]( src/assets/screenshots/SettingsPageScreenshot.png)
 
 ### Planned improvements
 - {{ Responsive Design }}
